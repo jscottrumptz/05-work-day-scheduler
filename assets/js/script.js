@@ -1,45 +1,4 @@
-let timeBlocks = [
-    {
-        id: 8,
-        text: ""
-    },
-    {
-        id: 9,
-        text: ""
-    },
-    {
-        id: 10,
-        text: ""
-    },
-    {
-        id: 11,
-        text: ""
-    },
-    {
-        id:12,
-        text:""
-    },
-    {
-        id:13,
-        text:""
-    },
-    {
-        id:14,
-        text:""
-    },
-    {
-        id:15,
-        text:""
-    },
-    {
-        id:16,
-        text:""
-    },
-    {
-        id:17,
-        text:""
-    }
-];
+let timeBlocks = [ "","","","","","","","","","","","","","","","",""];
 
 // displays the current day in the header
 let displayDay = function() {
@@ -78,23 +37,14 @@ let loadTimeBlocks = function() {
   
     // if nothing in localStorage, create an empty timeBlocks object
     if (!timeBlocks) {
-        timeBlocks = [{ id:8,text:""}, {id:9,text:""}, {id:10,text:""}, {id:11,text:""}, {id:12,text:""}, {id:13,text:""}, {id:14,text:""}, {id:15,text:""}, {id:16,text:""}, {id:17,text:""}]
+        timeBlocks = [ "","","","","","","","","","","","","","","","",""]
     }
 
-
-    // for loop that will run through all the block ids
+    // for loop that will run through all the timeBlocks in the array
     for(i=8 ; i<17 ;i++) {
 
     // load the saved data
-    let savedBlock = timeBlocks[i];
-
-    // console.log("savedBlock = " + savedBlock)
-
-    // capture the curret textfield id
-    let block = $(`#${i}`);
-
-    // load that id from local memory
-    block.text = savedBlock;
+    $(`#${i}`).text(timeBlocks[i]);
     }
 
     updateTimeBlockStatus();
@@ -108,21 +58,18 @@ let saveTimeBlocks = function() {
     
     $(this).css("color", "black");
 
-    //timeBlocks[blockId] = blockText;
-    console.log(blockText + " - id ='" + blockId +"'")
-
-    console.log(timeBlocks.blockId)
+    timeBlocks[blockId] = blockText
 
     localStorage.setItem("timeBlocks", JSON.stringify(timeBlocks));
 
-    // loadTimeBlocks();
+    loadTimeBlocks();
   };
   
 // display the current day at the top of the page
 displayDay();
 
 // check local storage for saved timeBlocks
-// loadTimeBlocks();
+loadTimeBlocks();
 
 // So that the user doesn't need to refresh, check every 60 secs to...
 setInterval(function(){
@@ -137,6 +84,8 @@ setInterval(function(){
 }, 1000 * 60);
 
 $(".time-block").on("click", ".btn", saveTimeBlocks);
+
+$("textarea").on("blur", saveTimeBlocks);
 
 
 
