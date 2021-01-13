@@ -88,7 +88,7 @@ setInterval(function(){
     // interval set to perform theses functions every 60 secs
 }, 1000 * 60);
 
-// save button click calls the saveTimeBlocks function
+// clicking the save button calls the saveTimeBlocks function
 $(".time-block").on("click", ".btn", saveTimeBlocks);
 
 // initialize bootstrap tootips
@@ -101,8 +101,13 @@ $(".saveBtn").on("click", function(){
     setTimeout(function(){ $('[data-bs-toggle="tooltip"]').tooltip("hide");}, 3000);
 });
 
-// code for after this is graded 
-// automatically save whenever the user clicks out of the textarea
+//                               //
+//                               //
+// code for after this is graded //
+//                               //
+//                               //
+
+//// automatically save whenever the user clicks out of the textarea
 // $("textarea").on("blur", function () {
 
 //     console.log(this);

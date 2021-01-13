@@ -18,12 +18,11 @@ Simple calendar application that allows a user to save events for each hour of t
 * jQuery
 * Bootstrap
 * Moment.js
-* jQuery UI
 
 ## Website
 https://jscottrumptz.github.io/05-work-day-scheduler/
 
-[image coming soon]
+![image](https://user-images.githubusercontent.com/74981245/104484203-9ba60d80-558e-11eb-9893-4489231f7ab5.png)
 
 ## Contribution
 Made with ❤️ by J Scott Rumptz
