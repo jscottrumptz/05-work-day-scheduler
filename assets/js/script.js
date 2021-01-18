@@ -101,25 +101,21 @@ $(".saveBtn").on("click", function(){
     setTimeout(function(){ $('[data-bs-toggle="tooltip"]').tooltip("hide");}, 3000);
 });
 
-//                               //
-//                               //
 // code for after this is graded //
-//                               //
-//                               //
 
-//// automatically save whenever the user clicks out of the textarea
-// $("textarea").on("blur", function () {
+// automatically save whenever the user clicks out of the textarea
+$("textarea").on("blur", function () {
 
-//     console.log(this);
+    console.log(this);
 
-//     let blockText = $(this).val().trim();
-//     let blockId = $(this).attr("id");
+    let blockText = $(this).val().trim();
+    let blockId = $(this).attr("id");
     
-//     $(this).css("color", "black");
+    $(this).css("color", "black");
 
-//     timeBlocks[blockId] = blockText
+    timeBlocks[blockId] = blockText
 
-//     localStorage.setItem("timeBlocks", JSON.stringify(timeBlocks));
+    localStorage.setItem("timeBlocks", JSON.stringify(timeBlocks));
 
-//     updateTimeBlockStatus();
-// });
+    updateTimeBlockStatus();
+});
